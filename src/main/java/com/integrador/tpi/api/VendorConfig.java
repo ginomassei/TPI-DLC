@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 @Singleton
 @Startup
-public class VendorConfiguration {
+public class VendorConfig {
 
     @Inject
     private DBManager db;
@@ -29,15 +29,11 @@ public class VendorConfiguration {
         docList = DocumentDao.getAll(db);
     }
 
-    public Hashtable<String, VocabularyEntry> getVocabulary() {
+    public HashMap<String, Vocabulary> getVocabulary() {
         return this.vocabulary;
     }
 
-    public List<Document> getDocList() {
+    public ArrayList<Document> getDocList() {
         return this.docList;
-    }
-
-    public void setDocList(List<Document> docList) {
-        this.docList = docList;
     }
 }

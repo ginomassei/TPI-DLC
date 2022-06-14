@@ -15,6 +15,5 @@ public class Main {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.println("DBManager connected");
     }
 }

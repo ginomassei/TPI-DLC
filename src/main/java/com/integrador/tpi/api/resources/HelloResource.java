@@ -1,9 +1,11 @@
 package com.integrador.tpi.api.resources;
 
+import com.integrador.tpi.api.VendorConfig;
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.DAL.DocumentDao;
 import com.integrador.tpi.lib.domain.Document;
 
+import javax.ejb.EJB;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -21,12 +23,13 @@ public class HelloResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response hello() {
-        ArrayList<Document> count = DocumentDao.getAll(db);
+        System.out.println(db.getUrl());
+        ArrayList<Document> docs = DocumentDao.getAll(db);
 
         return Response
             .status(Response.Status.OK)
             .type(MediaType.APPLICATION_JSON)
-            .entity(count)
+            .entity(docs)
             .build();
     }
 }

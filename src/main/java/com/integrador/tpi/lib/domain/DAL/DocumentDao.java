@@ -85,6 +85,7 @@ public class DocumentDao {
                         resultSet.getString("PATH")
                     ));
             }
+            dbManager.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
