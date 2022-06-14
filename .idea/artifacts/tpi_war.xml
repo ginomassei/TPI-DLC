@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="tpi:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>tpi</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="tpi-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="tpi:war exploded" />
+    </root>
+  </artifact>
+</component>
