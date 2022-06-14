@@ -49,17 +49,21 @@ public class PostsDao {
                 "JOIN DOCUMENTS ON DOCUMENTS.ID = POSTS.DOCUMENT_ID " +
                 "WHERE WORD LIKE ? ORDER BY FREQUENCY DESC LIMIT 25";
 
-        dbManager.prepareQuery(sql);
-        dbManager.setString(1, term);
+        try {
+            dbManager.prepareQuery(sql);
+            dbManager.setString(1, term);
 
-        ResultSet resultSet = dbManager.executeQuery();
+            ResultSet resultSet = dbManager.executeQuery();
 
-        HashMap<Integer, Post> posts = new HashMap<>();
-        while (resultSet.next()) {
-            Post postEntry = buildPostEntry(resultSet);
-            posts.put(postEntry.getDocumentId(), postEntry);
+            HashMap<Integer, Post> posts = new HashMap<>();
+            while (resultSet.next()) {
+                Post postEntry = buildPostEntry(resultSet);
+                posts.put(postEntry.getDocumentId(), postEntry);
+            }
+            resultSet.close();
+            return posts;
+        } catch (Exception e) {
+            throw new Exception("Error getting posts for term: " + term, e);
         }
-        resultSet.close();
-        return posts;
     }
 }
