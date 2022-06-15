@@ -49,12 +49,10 @@ public class VocabularyDao {
     }
 
     public static Vocabulary buildVocabularyEntry(ResultSet rs) throws SQLException {
-        Vocabulary vocabularyEntry = null;
-        vocabularyEntry = new Vocabulary(
+        return new Vocabulary(
             rs.getString("WORD"),
             rs.getInt("DOCUMENT_FREQUENCY"),
             rs.getInt("MAX_TERM_FREQUENCY")
         );
-        return vocabularyEntry;
     }
 }

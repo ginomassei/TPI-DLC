@@ -14,8 +14,7 @@
           <element id="module-output" name="tpi" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.29" />
-          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: org.mariadb.jdbc:mariadb-java-client:3.0.5" />
         </element>
       </element>
       <element id="directory" name="META-INF">

@@ -6,7 +6,6 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
-import javax.sound.midi.Soundbank;
 
 @ApplicationScoped
 public class DBManagerProducer {
@@ -18,8 +17,8 @@ public class DBManagerProducer {
         try {
             db = new DBManager();
             db.setConnectionMode(DBManager.DBConnectionMode.SINGLE_CONNECTION_MODE);
-            db.setDriverName(DBManager.MYSQL_DRIVER_NAME);
-            db.setUrl("jdbc:mysql://localhost:3306/DLC?rewriteBatchedStatements=true");
+            db.setDriverName(DBManager.MARIADB_DRIVER_NAME);
+            db.setUrl("jdbc:mariadb://localhost:3306/dlc?rewriteBatchedStatements=true");
             db.setUserName("root");
             db.setPassword("dlc2022");
             db.connect();

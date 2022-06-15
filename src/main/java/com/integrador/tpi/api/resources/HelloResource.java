@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 @Path("/hello-world")
 public class HelloResource {
+    @EJB
+    VendorConfig vendorConfig;
 
     @Inject
     private DBManager db;
@@ -23,7 +25,7 @@ public class HelloResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response hello() {
-        System.out.println(db.getUrl());
+
         ArrayList<Document> docs = DocumentDao.getAll(db);
 
         return Response

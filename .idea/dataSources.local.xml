@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-221.5787.30">
-    <data-source name="@localhost" uuid="fd0178a2-addb-4588-b2a3-1a7fa09c843e">
-      <database-info product="MySQL" version="8.0.29" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.25 (Revision: 08be9e9b4cba6aa115f9b27b215887af40b159e0)" dbms="MYSQL" exact-version="8.0.29" exact-driver-version="8.0">
+    <data-source name="@localhost" uuid="7e5af153-b8f5-4261-89eb-2bff1610691c">
+      <database-info product="MariaDB" version="10.8.3-MariaDB-1:10.8.3+maria~jammy" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.7.3" dbms="MARIADB" exact-version="10.8.3" exact-driver-version="2.7">
         <extra-name-characters>#@</extra-name-characters>
         <identifier-quote-string>`</identifier-quote-string>
       </database-info>
@@ -13,7 +13,7 @@
         <introspection-scope>
           <node kind="schema">
             <name qname="@" />
-            <name qname="DLC" />
+            <name qname="dlc" />
           </node>
         </introspection-scope>
       </schema-mapping>

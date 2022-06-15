@@ -41,6 +41,7 @@ public class DBManager implements Serializable {
     public static final String MYSQL_DRIVER_NAME = "com.mysql.cj.jdbc.Driver";
     public static final String H2_DRIVER_NAME = "org.h2.Driver";
     public static final String SQLSERVER_DRIVER_NAME = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
+    public static final String MARIADB_DRIVER_NAME = "org.mariadb.jdbc.Driver";
 
     private DBConnectionMode connectionMode;
 
