@@ -10,31 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ebede1-03c5-4ae0-9442-5de11c6cc269" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/DownloadResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/DLC.uwgBAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/DLC_DB.gmZYeA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +60,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -95,15 +76,19 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/documents" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="excludedTypes">
       <set>
         <option value="GlassfishConfiguration" />
+        <option value="PayaraServerConfiguration" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="GlassFish Server.GlassFish 5.2022.1">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.integrador.tpi.cli.Main" />
       <module name="tpi" />
@@ -210,7 +195,10 @@
       <option name="presentableId" value="Default" />
       <updated>1655231483713</updated>
       <workItem from="1655231485003" duration="28186000" />
-      <workItem from="1655266662644" duration="262000" />
+      <workItem from="1655266662644" duration="346000" />
+      <workItem from="1655315585729" duration="1630000" />
+      <workItem from="1655317253247" duration="4311000" />
+      <workItem from="1655321744955" duration="742000" />
     </task>
     <servers />
   </component>

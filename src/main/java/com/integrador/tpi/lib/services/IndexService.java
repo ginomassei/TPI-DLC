@@ -20,8 +20,8 @@ public class IndexService {
         BufferedReader document,
         String documentName,
         HashMap<String, Vocabulary> vocabularyHashMap,
-        HashMap<String, HashMap<Integer, Post>> postsHashMap,
-        DBManager dbManager
+        DBManager dbManager,
+        HashMap<String, HashMap<Integer, Post>> postsHashMap
     ) throws IOException {
         Integer documentId;
         if ((DocumentDao.getDocumentId(documentName, dbManager)) == null) {
@@ -35,13 +35,12 @@ public class IndexService {
         String line;
         while ((line = document.readLine()) != null) {
             for (String currentTerm : splitLinePattern.split(line)) {
-
                 currentTerm = Utils.normalizeString(currentTerm);
 
                 if (currentTerm.equals("")) continue;
 
+//                HashMap<Integer, Post> currentTermPosts = PostsDao.getTermPosts(currentTerm, dbManager);
                 HashMap<Integer, Post> currentTermPosts = postsHashMap.get(currentTerm);
-
                 if (currentTermPosts == null) {
                     currentTermPosts = new HashMap<>();
                     Post currentPost = new Post(documentId, 1);
@@ -53,7 +52,10 @@ public class IndexService {
                     newEntry.setMaxFrequency(1);
 
                     vocabularyHashMap.put(currentTerm, newEntry);
-                } else if (currentTermPosts.containsKey(documentId)) {
+                    continue;
+                }
+
+                if (!currentTermPosts.containsKey(documentId)) {
                     Post currentPost = new Post(documentId, 1);
                     currentTermPosts.put(documentId, currentPost);
                     postsHashMap.put(currentTerm, currentTermPosts);
@@ -62,7 +64,9 @@ public class IndexService {
                     vocabularyEntry.incrementDocumentFrequency();
 
                     vocabularyHashMap.put(currentTerm, vocabularyEntry);
-                } else {
+                }
+
+                if (currentTermPosts.containsKey(documentId)) {
                     Post currentPost = currentTermPosts.get(documentId);
                     currentPost.incrementTermFrequency();
 
@@ -72,8 +76,8 @@ public class IndexService {
                     Vocabulary vocabularyEntry = vocabularyHashMap.get(currentTerm);
                     if (currentPost.getTermFrequency() > vocabularyEntry.getMaxFrequency()) {
                         vocabularyEntry.setMaxFrequency(currentPost.getTermFrequency());
+                        vocabularyHashMap.put(currentTerm, vocabularyEntry);
                     }
-                    vocabularyHashMap.put(currentTerm, vocabularyEntry);
                 }
             }
         }

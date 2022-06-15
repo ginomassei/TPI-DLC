@@ -2,6 +2,7 @@ package com.integrador.tpi.api.resources;
 
 import com.integrador.tpi.api.config.VendorConfig;
 import com.integrador.tpi.lib.db.DBManager;
+import com.integrador.tpi.lib.domain.DAL.PostsDao;
 import com.integrador.tpi.lib.domain.DAL.VocabularyDao;
 import com.integrador.tpi.lib.domain.Post;
 import com.integrador.tpi.lib.domain.Vocabulary;
@@ -33,6 +34,7 @@ public class IndexResource {
     public Response index() {
         try {
             String DATA_PATH = "/Users/ginomassei/dev/dlc/tpi/documents/";
+//            String DATA_PATH = "/Users/ginomassei/dev/dlc/tpi/dummy_data/";
             this.run(DATA_PATH, db);
             this.saveVocabulary(db);
         } catch (Exception e) {
@@ -72,8 +74,9 @@ public class IndexResource {
         for (File document : documentList) {
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(Files.newInputStream(document.toPath()), StandardCharsets.UTF_8));
-            IndexService.index(reader, document.getName(), vocabularyHashMap, postsHashMap, dbManager);
+            IndexService.index(reader, document.getName(), vocabularyHashMap, dbManager, postsHashMap);
         }
+        PostsDao.save(postsHashMap, dbManager);
     }
 
     private void saveVocabulary(DBManager dbManager) throws Exception {

@@ -9,27 +9,33 @@ import java.sql.SQLException;
 import java.util.HashMap;
 
 public class PostsDao {
-    public static void save(HashMap<String, HashMap<Integer, Post>> postsHashMap, DBManager dbManager) throws Exception {
+    public static void save(HashMap<String, HashMap<Integer, Post>> postsHashMap, DBManager dbManager) {
         String sql =
             "INSERT INTO POSTS (DOCUMENT_ID, WORD, FREQUENCY) VALUES (?, ?, ?)" +
                 "ON DUPLICATE KEY UPDATE FREQUENCY = VALUES(FREQUENCY)";
 
-        PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+            for (String term : postsHashMap.keySet()) {
+                HashMap<Integer, Post> currentTermPosts = postsHashMap.get(term);
 
-        for (String term : postsHashMap.keySet()) {
-            HashMap<Integer, Post> currentTermPosts = postsHashMap.get(term);
+                for (Integer documentId : currentTermPosts.keySet()) {
+                    Post currentPost = currentTermPosts.get(documentId);
 
-            for (Integer documentId : currentTermPosts.keySet()) {
-                Post currentPost = currentTermPosts.get(documentId);
-
-                preparedStatement.setInt(1, documentId);
-                preparedStatement.setString(2, term);
-                preparedStatement.setInt(3, currentPost.getTermFrequency());
-                preparedStatement.addBatch();
+                    preparedStatement.setInt(1, documentId);
+                    preparedStatement.setString(2, term);
+                    preparedStatement.setInt(3, currentPost.getTermFrequency());
+                    preparedStatement.addBatch();
+                }
             }
+            preparedStatement.executeBatch();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
-        preparedStatement.executeBatch();
-        preparedStatement.close();
     }
 
     public static Post buildPostEntry(ResultSet rs) throws SQLException {
@@ -43,7 +49,7 @@ public class PostsDao {
         return postEntry;
     }
 
-    public static HashMap<Integer, Post> getTermPosts(String term, DBManager dbManager) throws Exception {
+    public static HashMap<Integer, Post> getTermPosts(String term, DBManager dbManager) {
         String sql =
             "SELECT DOCUMENT_ID, WORD, FREQUENCY, PATH FROM POSTS " +
                 "JOIN DOCUMENTS ON DOCUMENTS.ID = POSTS.DOCUMENT_ID " +
@@ -61,9 +67,12 @@ public class PostsDao {
                 posts.put(postEntry.getDocumentId(), postEntry);
             }
             resultSet.close();
-            return posts;
+            if (posts.size() > 0) {
+                return posts;
+            }
         } catch (Exception e) {
-            throw new Exception("Error getting posts for term: " + term, e);
+            e.printStackTrace();
         }
+        return null;
     }
 }
