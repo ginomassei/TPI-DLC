@@ -10,19 +10,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ebede1-03c5-4ae0-9442-5de11c6cc269" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/tpi_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/tpi_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/CorsFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/DBManagerProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/DBManagerProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/DBManagerProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/DBManagerProducer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/JAXRSApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/JAXRSApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/VendorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/HelloResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/HelloResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/db/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/db/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/SearchResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/SearchResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +189,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655231483713</updated>
-      <workItem from="1655231485003" duration="17186000" />
+      <workItem from="1655231485003" duration="19792000" />
     </task>
     <servers />
   </component>

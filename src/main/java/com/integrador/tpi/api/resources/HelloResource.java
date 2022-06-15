@@ -1,6 +1,6 @@
 package com.integrador.tpi.api.resources;
 
-import com.integrador.tpi.api.VendorConfig;
+import com.integrador.tpi.api.config.VendorConfig;
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.DAL.DocumentDao;
 import com.integrador.tpi.lib.domain.Document;

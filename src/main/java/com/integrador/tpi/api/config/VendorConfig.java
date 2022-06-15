@@ -1,4 +1,4 @@
-package com.integrador.tpi.api;
+package com.integrador.tpi.api.config;
 
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.DAL.DocumentDao;

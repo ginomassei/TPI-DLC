@@ -8,7 +8,6 @@ import com.integrador.tpi.lib.domain.Vocabulary;
 import com.integrador.tpi.lib.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.regex.Pattern;
@@ -37,7 +36,7 @@ public class SearchService {
         consultVocabulary.sort(Comparator.comparingInt(Vocabulary::getDocumentFrequency));
 
         for (Vocabulary currentVocabularyTerm : consultVocabulary) {
-            HashMap<Integer, Post> currentTermPostsList = null;
+            HashMap<Integer, Post> currentTermPostsList;
             try {
                 currentTermPostsList = PostsDao.getTermPosts(currentVocabularyTerm.getTerm(), dbManager);
             } catch (Exception e) {
@@ -65,14 +64,7 @@ public class SearchService {
             }
         }
 
-        Collections.sort(consultPosts, (post1, post2) -> (int) (post2.getRelevanceIdx() - post1.getRelevanceIdx()));
-
-        System.out.println("\nLD:");
-        for (Post i : consultPosts) {
-            System.out.println(i);
-        }
-
-        System.out.println("\nDocuments retrieved: " + consultPosts.size());
+        consultPosts.sort((post1, post2) -> (int) (post2.getRelevanceIdx() - post1.getRelevanceIdx()));
         return consultPosts;
     }
 }

@@ -47,7 +47,7 @@ public class PostsDao {
         String sql =
             "SELECT DOCUMENT_ID, WORD, FREQUENCY, PATH FROM POSTS " +
                 "JOIN DOCUMENTS ON DOCUMENTS.ID = POSTS.DOCUMENT_ID " +
-                "WHERE WORD LIKE ? ORDER BY FREQUENCY DESC LIMIT 25";
+                "WHERE WORD LIKE ?";
 
         try {
             dbManager.prepareQuery(sql);

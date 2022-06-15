@@ -3,7 +3,7 @@ package com.integrador.tpi.lib.domain;
 public class Post implements Comparable<Post> {
     private Integer termFrequency;
     private double relevanceIdx;
-    private Integer documentId;
+    private final Integer documentId;
     private String documentName;
 
     public Post(Integer documentId, Integer termFrequency) {
@@ -29,10 +29,6 @@ public class Post implements Comparable<Post> {
 
     public Integer getDocumentId() {
         return documentId;
-    }
-
-    public void setDocumentId(Integer documentId) {
-        this.documentId = documentId;
     }
 
     public double getRelevanceIdx() {
