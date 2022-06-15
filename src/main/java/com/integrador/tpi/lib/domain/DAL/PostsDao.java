@@ -33,7 +33,7 @@ public class PostsDao {
     }
 
     public static Post buildPostEntry(ResultSet rs) throws SQLException {
-        Post postEntry = null;
+        Post postEntry;
 
         postEntry = new Post(
             rs.getInt("DOCUMENT_ID"),

@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS dlc;
+
 CREATE DATABASE dlc;
 USE dlc;
 

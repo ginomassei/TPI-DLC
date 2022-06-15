@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="tpi:war exploded" />
+      <artifact name="tpi:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,17 +10,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ebede1-03c5-4ae0-9442-5de11c6cc269" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/CorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/DownloadResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fa0255d2-6b9f-4c81-883a-9a5f8033b5d7/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/DLC.uwgBAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/DLC_DB.gmZYeA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fd0178a2-addb-4588-b2a3-1a7fa09c843e/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/DBManagerProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/DBManagerProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/JAXRSApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/JAXRSApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/VendorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/HelloResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/HelloResource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/SearchResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/SearchResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,34 +67,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ginomassei/dev/dlc/tpi/documents",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ginomassei/dev/dlc/tpi/documents&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql",
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;mariadb&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
-      "MariaDB"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
+      &quot;MariaDB&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/documents" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="excludedTypes">
+      <set>
+        <option value="GlassfishConfiguration" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="GlassFish Server.GlassFish 5.2022.1">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -97,11 +117,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlassFish 5.2022.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2022.1" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="11">
+    <configuration name="GlassFish 5.2022.1" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2022.1" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="OPEN_IN_BROWSER" value="false" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/tpi-1.0-SNAPSHOT" />
+      <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="tpi:war exploded">
+        <artifact name="tpi:war">
           <settings>
             <option name="defaultContextRoot" value="false" />
           </settings>
@@ -167,7 +187,7 @@
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="tpi:war exploded" />
+          <artifact name="tpi:war" />
         </option>
       </method>
     </configuration>
@@ -189,7 +209,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655231483713</updated>
-      <workItem from="1655231485003" duration="19792000" />
+      <workItem from="1655231485003" duration="28186000" />
+      <workItem from="1655266662644" duration="262000" />
     </task>
     <servers />
   </component>

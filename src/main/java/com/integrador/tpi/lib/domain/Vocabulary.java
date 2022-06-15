@@ -1,11 +1,16 @@
 package com.integrador.tpi.lib.domain;
 
 public class Vocabulary {
-    private String term;
-    private Integer documentFrequency;
-    private Integer maxFrequency;
+    private final String term;
+    private int documentFrequency;
+    private int maxFrequency;
 
-    public Vocabulary(String term, Integer documentFrequency, Integer maxFrequency) {
+    public Vocabulary(String term) {
+        this.documentFrequency = 1;
+        this.term = term;
+    }
+
+    public Vocabulary(String term, int documentFrequency, int maxFrequency) {
         this.term = term;
         this.documentFrequency = documentFrequency;
         this.maxFrequency = maxFrequency;
@@ -15,23 +20,15 @@ public class Vocabulary {
         return term;
     }
 
-    public void setTerm(String term) {
-        this.term = term;
-    }
-
-    public void setDocumentFrequency(Integer documentFrequency) {
-        this.documentFrequency = documentFrequency;
-    }
-
-    public void setMaxFrequency(Integer maxFrequency) {
+    public void setMaxFrequency(int maxFrequency) {
         this.maxFrequency = maxFrequency;
     }
 
-    public Integer getDocumentFrequency() {
+    public int getDocumentFrequency() {
         return documentFrequency;
     }
 
-    public Integer getMaxFrequency() {
+    public int getMaxFrequency() {
         return maxFrequency;
     }
 

@@ -3,6 +3,7 @@ package com.integrador.tpi.api.resources;
 import com.integrador.tpi.api.config.VendorConfig;
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.DAL.VocabularyDao;
+import com.integrador.tpi.lib.domain.Post;
 import com.integrador.tpi.lib.domain.Vocabulary;
 import com.integrador.tpi.lib.services.IndexService;
 
@@ -25,6 +26,7 @@ public class IndexResource {
     private DBManager db;
 
     private final HashMap<String, Vocabulary> vocabularyHashMap = new HashMap<>();
+    private final HashMap<String, HashMap<Integer, Post>> postsHashMap = new HashMap<>();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -70,7 +72,7 @@ public class IndexResource {
         for (File document : documentList) {
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(Files.newInputStream(document.toPath()), StandardCharsets.UTF_8));
-            IndexService.index(reader, document.getName(), vocabularyHashMap, dbManager);
+            IndexService.index(reader, document.getName(), vocabularyHashMap, postsHashMap, dbManager);
         }
     }
 

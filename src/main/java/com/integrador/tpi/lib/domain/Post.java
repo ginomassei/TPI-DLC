@@ -31,6 +31,10 @@ public class Post implements Comparable<Post> {
         return documentId;
     }
 
+    public String getDocumentName() {
+        return documentName;
+    }
+
     public double getRelevanceIdx() {
         return relevanceIdx;
     }

@@ -18,6 +18,7 @@ public class SearchService {
 
     public static ArrayList<Post> search(String query, HashMap<String, Vocabulary> vocabularyHashMap, DBManager dbManager) {
         int documentCount = DocumentDao.getDocumentsCount(dbManager);
+
         ArrayList<Vocabulary> consultVocabulary = new ArrayList<>();
         ArrayList<Post> consultPosts = new ArrayList<>();
 
@@ -43,10 +44,16 @@ public class SearchService {
                 throw new RuntimeException(e);
             }
 
-            for (Integer documentName : currentTermPostsList.keySet()) {
-                Post currentPost = currentTermPostsList.get(documentName);
+            for (Integer documentId : currentTermPostsList.keySet()) {
+                Post currentPost = currentTermPostsList.get(documentId);
 
                 if (!consultPosts.contains(currentPost)) {
+                    double currentPostTermFrequency = currentPost.getTermFrequency();
+
+                    double relevanceIdx =
+                        currentPostTermFrequency * Math.log(documentCount / currentVocabularyTerm.getDocumentFrequency());
+
+                    currentPost.setRelevanceIdx(relevanceIdx);
                     consultPosts.add(currentPost);
                 } else {
                     int currentPostIdx = consultPosts.indexOf(currentPost);

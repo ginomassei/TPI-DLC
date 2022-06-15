@@ -32,8 +32,7 @@ public class VocabularyDao {
 
     public static void save(HashMap<String, Vocabulary> vocabulary, DBManager dbManager) throws Exception {
         String sql =
-            "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)" +
-                "ON DUPLICATE KEY UPDATE MAX_TERM_FREQUENCY = VALUES(MAX_TERM_FREQUENCY), DOCUMENT_FREQUENCY = VALUES(DOCUMENT_FREQUENCY)";
+            "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)";
 
         PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
 
