@@ -91,4 +91,19 @@ public class DocumentDao {
         }
         return documents;
     }
+
+    public static String getDocumentPath(Integer documentId, DBManager dbManager) {
+        try {
+            String SQL_QUERY = "SELECT PATH FROM DOCUMENTS WHERE ID = ?";
+            dbManager.prepareQuery(SQL_QUERY);
+            dbManager.setInt(1, documentId);
+            ResultSet resultSet = dbManager.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getString("PATH");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
