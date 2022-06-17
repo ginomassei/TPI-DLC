@@ -10,9 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ebede1-03c5-4ae0-9442-5de11c6cc269" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/tpi_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/tpi_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/DownloadResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/DownloadResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/DocumentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/DocumentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/DownloadResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/FilesResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +206,8 @@
       <workItem from="1655315585729" duration="1630000" />
       <workItem from="1655317253247" duration="4311000" />
       <workItem from="1655321744955" duration="6890000" />
-      <workItem from="1655414691276" duration="805000" />
+      <workItem from="1655414691276" duration="6763000" />
+      <workItem from="1655479557221" duration="4376000" />
     </task>
     <servers />
   </component>

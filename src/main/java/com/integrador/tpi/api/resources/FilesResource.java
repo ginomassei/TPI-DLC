@@ -8,8 +8,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import java.io.File;
 
-@Path("/download")
-public class DownloadResource {
+@Path("/files")
+public class FilesResource {
     @Inject
     DBManager dbManager;
 
@@ -17,7 +17,7 @@ public class DownloadResource {
 
     @GET
     @Produces("text/plain")
-    @Path("/{id}")
+    @Path("download/{id}")
     public Response getFile(@PathParam("id") String id) {
         String fileName = DocumentDao.getDocumentPath(Integer.parseInt(id), dbManager);
         File file = new File(DATA_PATH + fileName);

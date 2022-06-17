@@ -10,13 +10,11 @@ import java.util.HashMap;
 
 public class VocabularyDao {
     public static HashMap<String, Vocabulary> getAll(DBManager dbManager) {
-        String sql = "SELECT * FROM VOCABULARY";
-
+        String sql = "SELECT WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY FROM VOCABULARY";
         try {
-            dbManager.prepareQuery(sql);
+            PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
 
-            ResultSet resultSet = dbManager.executeQuery();
-
+            ResultSet resultSet = preparedStatement.executeQuery();
             HashMap<String, Vocabulary> vocabulary = new HashMap<>();
             while (resultSet.next()) {
                 Vocabulary vocabularyEntry = buildVocabularyEntry(resultSet);
@@ -30,21 +28,25 @@ public class VocabularyDao {
         return null;
     }
 
-    public static void save(HashMap<String, Vocabulary> vocabulary, DBManager dbManager) throws Exception {
-        String sql =
-            "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)";
+    public static void save(HashMap<String, Vocabulary> vocabulary, DBManager dbManager) {
+        String sql = "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)" +
+            "ON DUPLICATE KEY UPDATE MAX_TERM_FREQUENCY = ?, DOCUMENT_FREQUENCY = ?";
+        try {
+            PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
 
-        PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+            for (String w: vocabulary.keySet()) {
+                Vocabulary vocabularyEntry = vocabulary.get(w);
+                preparedStatement.setString(1, vocabularyEntry.getTerm());
+                preparedStatement.setInt(2, vocabularyEntry.getMaxFrequency());
+                preparedStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
 
-        for (String w: vocabulary.keySet()) {
-            Vocabulary vocabularyEntry = vocabulary.get(w);
-            preparedStatement.setString(1, vocabularyEntry.getTerm());
-            preparedStatement.setInt(2, vocabularyEntry.getMaxFrequency());
-            preparedStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
-            preparedStatement.addBatch();
+                preparedStatement.addBatch();
+            }
+            preparedStatement.executeBatch();
+            preparedStatement.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        preparedStatement.executeBatch();
-        preparedStatement.close();
     }
 
     public static Vocabulary buildVocabularyEntry(ResultSet rs) throws SQLException {

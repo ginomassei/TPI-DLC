@@ -2,6 +2,7 @@ package com.integrador.tpi.lib.services;
 
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.DAL.DocumentDao;
+import com.integrador.tpi.lib.domain.DAL.PostsDao;
 import com.integrador.tpi.lib.domain.Post;
 import com.integrador.tpi.lib.domain.Vocabulary;
 import com.integrador.tpi.lib.utils.Utils;
@@ -39,8 +40,7 @@ public class IndexService {
 
                 if (currentTerm.equals("")) continue;
 
-//                HashMap<Integer, Post> currentTermPosts = PostsDao.getTermPosts(currentTerm, dbManager);
-                HashMap<Integer, Post> currentTermPosts = postsHashMap.get(currentTerm);
+                HashMap<Integer, Post> currentTermPosts = PostsDao.getTermPosts(currentTerm, dbManager);
                 if (currentTermPosts == null) {
                     currentTermPosts = new HashMap<>();
                     Post currentPost = new Post(documentId, 1);
