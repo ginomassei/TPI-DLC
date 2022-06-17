@@ -48,6 +48,7 @@ public class IndexResource {
 
             PostsDao.save(postsHashMap, dbManager);
             VocabularyDao.save(vocabularyHashMap, dbManager);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -55,7 +56,7 @@ public class IndexResource {
         return Response
             .status(Response.Status.OK)
             .type(MediaType.APPLICATION_JSON)
-            .entity("{\"status\": \"ok\", \"message\": \"Document indexed\"}")
+            .entity("{\"status\": \"ok\", \"message\": \"Document indexed successfully!\"}")
             .build();
     }
 }

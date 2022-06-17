@@ -29,21 +29,34 @@ public class VocabularyDao {
     }
 
     public static void save(HashMap<String, Vocabulary> vocabulary, DBManager dbManager) {
-        String sql = "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)" +
-            "ON DUPLICATE KEY UPDATE MAX_TERM_FREQUENCY = ?, DOCUMENT_FREQUENCY = ?";
+        String sqlInsert = "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)";
+        String sqlUpdate = "UPDATE VOCABULARY SET MAX_TERM_FREQUENCY = ?, DOCUMENT_FREQUENCY = ? WHERE WORD = ?";
+
         try {
-            PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+            PreparedStatement preparedInsertStatement = dbManager.getNewConnection().prepareStatement(sqlInsert);
+            PreparedStatement preparedUpdateStatement = dbManager.getNewConnection().prepareStatement(sqlUpdate);
 
             for (String w: vocabulary.keySet()) {
                 Vocabulary vocabularyEntry = vocabulary.get(w);
-                preparedStatement.setString(1, vocabularyEntry.getTerm());
-                preparedStatement.setInt(2, vocabularyEntry.getMaxFrequency());
-                preparedStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
 
-                preparedStatement.addBatch();
+                if (vocabularyEntry.isNew()) {
+                    preparedInsertStatement.setString(1, vocabularyEntry.getTerm());
+                    preparedInsertStatement.setInt(2, vocabularyEntry.getMaxFrequency());
+                    preparedInsertStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
+                    preparedInsertStatement.addBatch();
+                } else if (vocabularyEntry.needsUpdate()) {
+                    preparedUpdateStatement.setInt(1, vocabularyEntry.getMaxFrequency());
+                    preparedUpdateStatement.setInt(2, vocabularyEntry.getDocumentFrequency());
+                    preparedUpdateStatement.setString(3, vocabularyEntry.getTerm());
+                    preparedUpdateStatement.addBatch();
+                }
             }
-            preparedStatement.executeBatch();
-            preparedStatement.close();
+            preparedInsertStatement.executeBatch();
+            preparedUpdateStatement.executeBatch();
+            preparedInsertStatement.close();
+            preparedUpdateStatement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
