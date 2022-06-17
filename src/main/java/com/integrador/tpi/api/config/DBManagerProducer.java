@@ -22,7 +22,6 @@ public class DBManagerProducer {
             db.setUserName("root");
             db.setPassword("dlc2022");
             db.connect();
-            System.out.println("DBManager connected");
         } catch (Exception e) {
             e.printStackTrace();
         }
