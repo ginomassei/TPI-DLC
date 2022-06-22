@@ -51,11 +51,13 @@ public class Main {
         assert documentList != null;
 
         for (File document : documentList) {
+            System.out.println("Indexando documento: " + document.getName());
             BufferedReader reader = new BufferedReader(
                 new InputStreamReader(Files.newInputStream(document.toPath()), StandardCharsets.UTF_8));
             IndexService.index(reader, document.getName(), vocabularyHashMap, dbManager, postsHashMap);
+            PostsDao.save(postsHashMap, dbManager);
+            postsHashMap.clear();
         }
-        PostsDao.save(postsHashMap, dbManager);
     }
 
     private static void saveVocabulary(DBManager dbManager) throws Exception {

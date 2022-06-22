@@ -3,43 +3,23 @@ package com.integrador.tpi.lib.domain.DAL;
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.Document;
 
-import java.io.File;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
 public class DocumentDao {
-    public static void save(String documentPath, DBManager dbManager) {
+    public static int save(String documentPath, DBManager dbManager) {
         String SQL_QUERY = "INSERT INTO DOCUMENTS (PATH) VALUES (?)";
         try {
             dbManager.prepareQuery(SQL_QUERY);
             dbManager.setString(1, documentPath);
-            dbManager.executeUpdate();
+            ResultSet rs = dbManager.executeUpdate().getGeneratedKeys();
+            if (rs.first()) {
+                return rs.getInt(1);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void delete(File document, DBManager dbManager) {
-        String SQL_QUERY = "DELETE FROM DOCUMENTS WHERE PATH = ?";
-        try {
-            dbManager.prepareQuery(SQL_QUERY);
-            dbManager.setString(1, document.getPath());
-            dbManager.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void update(File document, DBManager dbManager) {
-        String SQL_QUERY = "UPDATE DOCUMENTS SET PATH = ? WHERE PATH = ?";
-        try {
-            dbManager.prepareQuery(SQL_QUERY);
-            dbManager.setString(1, document.getPath());
-            dbManager.setString(2, document.getPath());
-            dbManager.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        return -1;
     }
 
     public static Integer getDocumentId(String documentPath, DBManager dbManager) {

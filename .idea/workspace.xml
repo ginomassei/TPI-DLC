@@ -10,10 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ebede1-03c5-4ae0-9442-5de11c6cc269" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/index.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/DocumentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/DocumentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +43,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -46,30 +56,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/ginomassei/dev/dlc/tpi/documents&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ginomassei/dev/dlc/tpi/documents",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "configurable.group.editor"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "mariadb"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;MariaDB&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "MariaDB"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/documents" />
@@ -203,7 +213,17 @@
       <workItem from="1655317253247" duration="4311000" />
       <workItem from="1655321744955" duration="6890000" />
       <workItem from="1655414691276" duration="6763000" />
-      <workItem from="1655479557221" duration="9247000" />
+      <workItem from="1655479557221" duration="10119000" />
+      <workItem from="1655502707814" duration="621000" />
+      <workItem from="1655503499969" duration="21000" />
+      <workItem from="1655647429058" duration="618000" />
+      <workItem from="1655651240975" duration="44000" />
+      <workItem from="1655732748077" duration="604000" />
+      <workItem from="1655767479206" duration="4405000" />
+      <workItem from="1655812490742" duration="22000" />
+      <workItem from="1655812591895" duration="30000" />
+      <workItem from="1655817940539" duration="69000" />
+      <workItem from="1655859233218" duration="7738000" />
     </task>
     <servers />
   </component>

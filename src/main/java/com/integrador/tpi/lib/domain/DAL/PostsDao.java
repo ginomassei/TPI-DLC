@@ -10,13 +10,11 @@ import java.util.HashMap;
 
 public class PostsDao {
     public static void save(HashMap<String, HashMap<Integer, Post>> postsHashMap, DBManager dbManager) {
-        String sql =
-            "INSERT INTO POSTS (DOCUMENT_ID, WORD, FREQUENCY) VALUES (?, ?, ?)" +
-                "ON DUPLICATE KEY UPDATE FREQUENCY = VALUES(FREQUENCY)";
+        String insertSql = "INSERT INTO POSTS (DOCUMENT_ID, WORD, FREQUENCY) VALUES (?, ?, ?)";
 
-        PreparedStatement preparedStatement = null;
+        PreparedStatement preparedStatement;
         try {
-            preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+            preparedStatement = dbManager.getNewConnection().prepareStatement(insertSql);
             for (String term : postsHashMap.keySet()) {
                 HashMap<Integer, Post> currentTermPosts = postsHashMap.get(term);
 
@@ -30,7 +28,6 @@ public class PostsDao {
                 }
             }
             preparedStatement.executeBatch();
-            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -40,7 +37,6 @@ public class PostsDao {
 
     public static Post buildPostEntry(ResultSet rs) throws SQLException {
         Post postEntry;
-
         postEntry = new Post(
             rs.getInt("DOCUMENT_ID"),
             rs.getInt("FREQUENCY"),

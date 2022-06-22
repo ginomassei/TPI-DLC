@@ -24,10 +24,10 @@ public class IndexService {
         DBManager dbManager,
         HashMap<String, HashMap<Integer, Post>> postsHashMap
     ) throws IOException {
+        if (!documentName.contains(".txt")) return;
         Integer documentId;
         if ((DocumentDao.getDocumentId(documentName, dbManager)) == null) {
-            DocumentDao.save(documentName, dbManager);
-            documentId = DocumentDao.getDocumentId(documentName, dbManager);
+            documentId = DocumentDao.save(documentName, dbManager);;
             areDocumentsIndexed = true;
         } else {
             return;
@@ -40,7 +40,7 @@ public class IndexService {
 
                 if (currentTerm.equals("")) continue;
 
-                HashMap<Integer, Post> currentTermPosts = PostsDao.getTermPosts(currentTerm, dbManager);
+                HashMap<Integer, Post> currentTermPosts = postsHashMap.get(currentTerm);
                 if (currentTermPosts == null) {
                     currentTermPosts = new HashMap<>();
                     Post currentPost = new Post(documentId, 1);

@@ -24,6 +24,10 @@ public class VendorConfig {
         vocabulary = VocabularyDao.getAll(db);
     }
 
+    public void reloadConfiguration() {
+        vocabulary = VocabularyDao.getAll(db);
+    }
+
     public HashMap<String, Vocabulary> getVocabulary() {
         return this.vocabulary;
     }

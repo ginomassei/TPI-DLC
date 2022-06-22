@@ -45,17 +45,31 @@ public class IndexResource {
             BufferedReader reader = new BufferedReader(new FileReader(filePath, StandardCharsets.UTF_8));
 
             IndexService.index(reader, fileName, vocabularyHashMap, dbManager, postsHashMap);
+            if (IndexService.areDocumentsIndexed) {
+                try {
+                    VocabularyDao.save(vocabularyHashMap, dbManager);
+                    vendorConfig.reloadConfiguration();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                try {
+                    PostsDao.save(postsHashMap, dbManager);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
 
-            PostsDao.save(postsHashMap, dbManager);
-            VocabularyDao.save(vocabularyHashMap, dbManager);
-
+            } else {
+                return Response
+                    .status(Response.Status.CONFLICT)
+                    .entity("{\"status\": \"error\", \"message\": \"Document already indexed!\"}")
+                    .build();
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
 
         return Response
             .status(Response.Status.OK)
-            .type(MediaType.APPLICATION_JSON)
             .entity("{\"status\": \"ok\", \"message\": \"Document indexed successfully!\"}")
             .build();
     }

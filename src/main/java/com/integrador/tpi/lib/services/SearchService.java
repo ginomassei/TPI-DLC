@@ -40,6 +40,7 @@ public class SearchService {
             HashMap<Integer, Post> currentTermPostsList;
             try {
                 currentTermPostsList = PostsDao.getTermPosts(currentVocabularyTerm.getTerm(), dbManager);
+                if (currentTermPostsList == null) continue;
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

@@ -40,11 +40,14 @@ public class VocabularyDao {
                 Vocabulary vocabularyEntry = vocabulary.get(w);
 
                 if (vocabularyEntry.isNew()) {
+                    System.out.println("Inserting: " + vocabularyEntry.getTerm());
                     preparedInsertStatement.setString(1, vocabularyEntry.getTerm());
                     preparedInsertStatement.setInt(2, vocabularyEntry.getMaxFrequency());
                     preparedInsertStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
                     preparedInsertStatement.addBatch();
-                } else if (vocabularyEntry.needsUpdate()) {
+                }
+                if (vocabularyEntry.needsUpdate()) {
+                    System.out.println("Updating " + vocabularyEntry.getTerm());
                     preparedUpdateStatement.setInt(1, vocabularyEntry.getMaxFrequency());
                     preparedUpdateStatement.setInt(2, vocabularyEntry.getDocumentFrequency());
                     preparedUpdateStatement.setString(3, vocabularyEntry.getTerm());
@@ -55,8 +58,7 @@ public class VocabularyDao {
             preparedUpdateStatement.executeBatch();
             preparedInsertStatement.close();
             preparedUpdateStatement.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Vocabulary saved");
         } catch (Exception e) {
             e.printStackTrace();
         }

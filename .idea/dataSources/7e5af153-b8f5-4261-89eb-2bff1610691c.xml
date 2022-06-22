@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@localhost">
-  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.39">
+  <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.40">
     <root id="1">
       <DefaultCasing>exact</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -1126,7 +1126,7 @@
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
     <column id="335" parent="332" name="ID">
-      <AutoIncrement>603</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1136,61 +1136,70 @@
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <key id="337" parent="332" name="PRIMARY">
+    <index id="337" parent="332" name="PRIMARY">
       <ColNames>ID</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="338" parent="332" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="338" parent="333" name="DOCUMENT_ID">
+    <column id="339" parent="333" name="DOCUMENT_ID">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="339" parent="333" name="WORD">
+    <column id="340" parent="333" name="WORD">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="340" parent="333" name="FREQUENCY">
+    <column id="341" parent="333" name="FREQUENCY">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="341" parent="333" name="CONTEXT">
+    <column id="342" parent="333" name="CONTEXT">
       <DataType>varchar(200)|0s</DataType>
       <Position>4</Position>
     </column>
-    <index id="342" parent="333" name="POSTS_WORD_FREQUENCY_index">
-      <ColNames>WORD
-FREQUENCY</ColNames>
-      <ReverseColNames>FREQUENCY</ReverseColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="343" parent="333" name="PRIMARY">
+    <index id="343" parent="333" name="PRIMARY">
       <ColNames>DOCUMENT_ID
 WORD</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="344" parent="333" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="344" parent="334" name="WORD">
+    <column id="345" parent="334" name="WORD">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="345" parent="334" name="MAX_TERM_FREQUENCY">
+    <column id="346" parent="334" name="MAX_TERM_FREQUENCY">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="346" parent="334" name="DOCUMENT_FREQUENCY">
+    <column id="347" parent="334" name="DOCUMENT_FREQUENCY">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="347" parent="334" name="PRIMARY">
+    <index id="348" parent="334" name="PRIMARY">
       <ColNames>WORD</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="349" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>
