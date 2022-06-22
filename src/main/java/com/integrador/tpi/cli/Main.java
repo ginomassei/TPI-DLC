@@ -52,8 +52,7 @@ public class Main {
 
         for (File document : documentList) {
             System.out.println("Indexando documento: " + document.getName());
-            BufferedReader reader = new BufferedReader(
-                new InputStreamReader(Files.newInputStream(document.toPath()), StandardCharsets.UTF_8));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(Files.newInputStream(document.toPath()), StandardCharsets.UTF_8));
             IndexService.index(reader, document.getName(), vocabularyHashMap, dbManager, postsHashMap);
             PostsDao.save(postsHashMap, dbManager);
             postsHashMap.clear();

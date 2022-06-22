@@ -1126,7 +1126,7 @@
       <CollationName>utf8mb4_general_ci</CollationName>
     </table>
     <column id="335" parent="332" name="ID">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>594</AutoIncrement>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1171,32 +1171,38 @@ WORD</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="344" parent="333" name="PRIMARY">
+    <index id="344" parent="333" name="POSTS_INDEX">
+      <ColNames>WORD
+FREQUENCY</ColNames>
+      <ReverseColNames>FREQUENCY</ReverseColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="345" parent="333" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="345" parent="334" name="WORD">
+    <column id="346" parent="334" name="WORD">
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="346" parent="334" name="MAX_TERM_FREQUENCY">
+    <column id="347" parent="334" name="MAX_TERM_FREQUENCY">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="347" parent="334" name="DOCUMENT_FREQUENCY">
+    <column id="348" parent="334" name="DOCUMENT_FREQUENCY">
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <index id="348" parent="334" name="PRIMARY">
+    <index id="349" parent="334" name="PRIMARY">
       <ColNames>WORD</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="349" parent="334" name="PRIMARY">
+    <key id="350" parent="334" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

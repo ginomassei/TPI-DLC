@@ -28,6 +28,7 @@ public class PostsDao {
                 }
             }
             preparedStatement.executeBatch();
+            preparedStatement.close();
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {

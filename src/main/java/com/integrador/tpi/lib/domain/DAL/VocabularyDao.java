@@ -51,8 +51,6 @@ public class VocabularyDao {
         String sqlInsert = "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)";
         try {
             PreparedStatement preparedInsertStatement = dbManager.getNewConnection().prepareStatement(sqlInsert);
-//            PreparedStatement preparedUpdateStatement = dbManager.getNewConnection().prepareStatement(sqlUpdate);
-
             for (String w: vocabulary.keySet()) {
                 Vocabulary vocabularyEntry = vocabulary.get(w);
 
@@ -60,19 +58,9 @@ public class VocabularyDao {
                 preparedInsertStatement.setInt(2, vocabularyEntry.getMaxFrequency());
                 preparedInsertStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
                 preparedInsertStatement.addBatch();
-
-//                if (vocabularyEntry.needsUpdate()) {
-//                    System.out.println("Updating " + vocabularyEntry.getTerm());
-//                    preparedUpdateStatement.setInt(1, vocabularyEntry.getMaxFrequency());
-//                    preparedUpdateStatement.setInt(2, vocabularyEntry.getDocumentFrequency());
-//                    preparedUpdateStatement.setString(3, vocabularyEntry.getTerm());
-//                    preparedUpdateStatement.addBatch();
-//                }
             }
             preparedInsertStatement.executeBatch();
-//            preparedUpdateStatement.executeBatch();
             preparedInsertStatement.close();
-//            preparedUpdateStatement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

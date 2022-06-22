@@ -23,14 +23,11 @@ public class IndexService {
         DBManager dbManager,
         HashMap<String, HashMap<Integer, Post>> postsHashMap
     ) throws IOException {
+        areDocumentsIndexed = false;
         if (!documentName.contains(".txt")) return;
-        Integer documentId;
-        if ((DocumentDao.getDocumentId(documentName, dbManager)) == null) {
-            documentId = DocumentDao.save(documentName, dbManager);;
-            areDocumentsIndexed = true;
-        } else {
-            return;
-        }
+        if (DocumentDao.getDocumentId(documentName, dbManager) != -1) return;
+        Integer documentId = DocumentDao.save(documentName, dbManager);
+        areDocumentsIndexed = true;
 
         String line;
         while ((line = document.readLine()) != null) {
@@ -47,9 +44,12 @@ public class IndexService {
                     currentTermPosts.put(documentId, currentPost);
                     postsHashMap.put(currentTerm, currentTermPosts);
 
+                    if (vocabularyHashMap.containsKey(currentTerm)) {
+                        vocabularyHashMap.get(currentTerm).incrementDocumentFrequency();
+                        continue;
+                    }
                     Vocabulary newEntry = new Vocabulary(currentTerm);
                     newEntry.setMaxFrequency(1);
-
                     vocabularyHashMap.put(currentTerm, newEntry);
                     continue;
                 }
@@ -60,9 +60,7 @@ public class IndexService {
                     postsHashMap.put(currentTerm, currentTermPosts);
 
                     Vocabulary vocabularyEntry = vocabularyHashMap.get(currentTerm);
-                    System.out.println("Necesita actualizar: " + vocabularyEntry.needsUpdate());
                     vocabularyEntry.incrementDocumentFrequency();
-
                     vocabularyHashMap.put(currentTerm, vocabularyEntry);
                 }
 

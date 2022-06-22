@@ -22,7 +22,7 @@ public class DocumentDao {
         return -1;
     }
 
-    public static Integer getDocumentId(String documentPath, DBManager dbManager) {
+    public static int getDocumentId(String documentPath, DBManager dbManager) {
         try {
             String SQL_QUERY = "SELECT ID FROM DOCUMENTS WHERE PATH = ?";
             dbManager.prepareQuery(SQL_QUERY);
@@ -34,7 +34,7 @@ public class DocumentDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return -1;
     }
 
     public static int getDocumentsCount(DBManager dbManager) {
