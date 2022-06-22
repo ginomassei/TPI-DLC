@@ -2,7 +2,6 @@ package com.integrador.tpi.lib.services;
 
 import com.integrador.tpi.lib.db.DBManager;
 import com.integrador.tpi.lib.domain.DAL.DocumentDao;
-import com.integrador.tpi.lib.domain.DAL.PostsDao;
 import com.integrador.tpi.lib.domain.Post;
 import com.integrador.tpi.lib.domain.Vocabulary;
 import com.integrador.tpi.lib.utils.Utils;
@@ -61,6 +60,7 @@ public class IndexService {
                     postsHashMap.put(currentTerm, currentTermPosts);
 
                     Vocabulary vocabularyEntry = vocabularyHashMap.get(currentTerm);
+                    System.out.println("Necesita actualizar: " + vocabularyEntry.needsUpdate());
                     vocabularyEntry.incrementDocumentFrequency();
 
                     vocabularyHashMap.put(currentTerm, vocabularyEntry);

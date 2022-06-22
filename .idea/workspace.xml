@@ -10,20 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78ebede1-03c5-4ae0-9442-5de11c6cc269" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/index.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/7e5af153-b8f5-4261-89eb-2bff1610691c.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/config/VendorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/api/resources/IndexResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/cli/run/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/DocumentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/DocumentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/PostsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/DAL/VocabularyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/domain/Vocabulary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/IndexService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/integrador/tpi/lib/services/SearchService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +91,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="GlassFish Server.GlassFish 5.2022.1">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.integrador.tpi.cli.Main" />
       <module name="tpi" />
@@ -223,7 +213,7 @@
       <workItem from="1655812490742" duration="22000" />
       <workItem from="1655812591895" duration="30000" />
       <workItem from="1655817940539" duration="69000" />
-      <workItem from="1655859233218" duration="7738000" />
+      <workItem from="1655859233218" duration="9677000" />
     </task>
     <servers />
   </component>

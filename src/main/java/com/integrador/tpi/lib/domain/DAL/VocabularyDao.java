@@ -29,36 +29,50 @@ public class VocabularyDao {
     }
 
     public static void save(HashMap<String, Vocabulary> vocabulary, DBManager dbManager) {
-        String sqlInsert = "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)";
-        String sqlUpdate = "UPDATE VOCABULARY SET MAX_TERM_FREQUENCY = ?, DOCUMENT_FREQUENCY = ? WHERE WORD = ?";
+        String sql = "DROP TABLE IF EXISTS VOCABULARY";
+        try {
+            PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            sql = "CREATE TABLE VOCABULARY (WORD VARCHAR(200) NOT NULL, MAX_TERM_FREQUENCY INT NOT NULL, DOCUMENT_FREQUENCY INT NOT NULL, PRIMARY KEY (WORD))";
+            PreparedStatement preparedStatement = dbManager.getNewConnection().prepareStatement(sql);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
+        String sqlInsert = "INSERT INTO VOCABULARY (WORD, MAX_TERM_FREQUENCY, DOCUMENT_FREQUENCY) VALUES (?, ?, ?)";
         try {
             PreparedStatement preparedInsertStatement = dbManager.getNewConnection().prepareStatement(sqlInsert);
-            PreparedStatement preparedUpdateStatement = dbManager.getNewConnection().prepareStatement(sqlUpdate);
+//            PreparedStatement preparedUpdateStatement = dbManager.getNewConnection().prepareStatement(sqlUpdate);
 
             for (String w: vocabulary.keySet()) {
                 Vocabulary vocabularyEntry = vocabulary.get(w);
 
-                if (vocabularyEntry.isNew()) {
-                    System.out.println("Inserting: " + vocabularyEntry.getTerm());
-                    preparedInsertStatement.setString(1, vocabularyEntry.getTerm());
-                    preparedInsertStatement.setInt(2, vocabularyEntry.getMaxFrequency());
-                    preparedInsertStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
-                    preparedInsertStatement.addBatch();
-                }
-                if (vocabularyEntry.needsUpdate()) {
-                    System.out.println("Updating " + vocabularyEntry.getTerm());
-                    preparedUpdateStatement.setInt(1, vocabularyEntry.getMaxFrequency());
-                    preparedUpdateStatement.setInt(2, vocabularyEntry.getDocumentFrequency());
-                    preparedUpdateStatement.setString(3, vocabularyEntry.getTerm());
-                    preparedUpdateStatement.addBatch();
-                }
+                preparedInsertStatement.setString(1, vocabularyEntry.getTerm());
+                preparedInsertStatement.setInt(2, vocabularyEntry.getMaxFrequency());
+                preparedInsertStatement.setInt(3, vocabularyEntry.getDocumentFrequency());
+                preparedInsertStatement.addBatch();
+
+//                if (vocabularyEntry.needsUpdate()) {
+//                    System.out.println("Updating " + vocabularyEntry.getTerm());
+//                    preparedUpdateStatement.setInt(1, vocabularyEntry.getMaxFrequency());
+//                    preparedUpdateStatement.setInt(2, vocabularyEntry.getDocumentFrequency());
+//                    preparedUpdateStatement.setString(3, vocabularyEntry.getTerm());
+//                    preparedUpdateStatement.addBatch();
+//                }
             }
             preparedInsertStatement.executeBatch();
-            preparedUpdateStatement.executeBatch();
+//            preparedUpdateStatement.executeBatch();
             preparedInsertStatement.close();
-            preparedUpdateStatement.close();
-            System.out.println("Vocabulary saved");
+//            preparedUpdateStatement.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
